@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Idea Hub - Discover & Build Amazing Projects</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">DevOps Hub</span>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#explorer" class="nav-link">Project Explorer</a></li>
+                <li><a href="#tools" class="nav-link">Tools Library</a></li>
+                <li><a href="#productivity" class="nav-link">Productivity Hub</a></li>
+                <li><a href="#suggest" class="nav-link">Suggest Idea</a></li>
+                <li><a href="#profile" class="nav-link">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Your Next DevOps Project</h1>
+                <p class="hero-subtitle">Explore ideas, learn tools, and build amazing infrastructure</p>
+                <div class="search-container">
+                    <input type="text" id="hero-search" class="search-input" placeholder="Search projects, tools, or ideas...">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Trending Projects -->
+            <section class="section">
+                <h2 class="section-title">🔥 Trending Projects</h2>
+                <div class="projects-grid" id="trending-projects">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+
+            <!-- Categories -->
+            <section class="section">
+                <h2 class="section-title">📁 Categories</h2>
+                <div class="categories-grid" id="categories">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+
+            <!-- Popular Tools -->
+            <section class="section">
+                <h2 class="section-title">🛠 Popular Tools</h2>
+                <div class="tools-preview" id="popular-tools">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Project Explorer Page -->
+    <section id="explorer" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>DevOps Project Explorer</h1>
+                <p>Filter and discover projects that match your skill level</p>
+            </div>
+
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label>Difficulty</label>
+                    <select id="filter-difficulty" class="filter-select">
+                        <option value="all">All Levels</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Category</label>
+                    <select id="filter-category" class="filter-select">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Tools</label>
+                    <select id="filter-tools" class="filter-select">
+                        <option value="all">All Tools</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sort By</label>
+                    <select id="sort-by" class="filter-select">
+                        <option value="popularity">Popularity</option>
+                        <option value="difficulty">Difficulty</option>
+                        <option value="name">Name</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="projects-grid" id="explorer-projects">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="project-details">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Tools Library Page -->
+    <section id="tools" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>DevOps Tools Library</h1>
+                <p>Learn about essential DevOps tools and their usage</p>
+            </div>
+            <div class="tools-grid" id="tools-library">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Productivity Hub Page -->
+    <section id="productivity" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Productivity Hub</h1>
+                <p>Tips, tricks, and best practices for DevOps professionals</p>
+            </div>
+            <div class="productivity-content">
+                <div class="productivity-section">
+                    <h2>🐧 Linux Commands Cheat Sheet</h2>
+                    <div class="code-block">
+                        <pre><code># File Operations
+ls -la                    # List all files with details
+grep -r "pattern" .       # Search recursively
+find . -name "*.log"      # Find files by name
+tar -czf archive.tar.gz   # Create compressed archive
+
+# System Info
+df -h                     # Disk space
+free -h                   # Memory usage
+top                       # Process monitor
+ps aux | grep process     # Find process</code></pre>
+                    </div>
+                </div>
+
+                <div class="productivity-section">
+                    <h2>📝 Git Best Practices</h2>
+                    <div class="code-block">
+                        <pre><code># Branching Strategy
+git checkout -b feature/new-feature
+git commit -m "feat: add new feature"
+git push origin feature/new-feature
+
+# Useful Commands
+git stash                 # Save uncommitted changes
+git rebase -i HEAD~3      # Interactive rebase
+git log --oneline --graph # Visual history
+git diff --staged         # Review staged changes</code></pre>
+                    </div>
+                </div>
+
+                <div class="productivity-section">
+                    <h2>🐚 Bash Scripting Tips</h2>
+                    <div class="code-block">
+                        <pre><code>#!/bin/bash
+# Error handling
+set -e                    # Exit on error
+set -u                    # Exit on undefined variable
+
+# Variables
+VAR="value"
+echo "${VAR:-default}"    # Use default if empty
+
+# Functions
+function deploy() {
+    local env=$1
+    echo "Deploying to $env"
+}
+
+# Loops
+for file in *.log; do
+    echo "Processing $file"
+done</code></pre>
+                    </div>
+                </div>
+
+                <div class="productivity-section">
+                    <h2>📋 YAML Best Practices</h2>
+                    <div class="tips-list">
+                        <ul>
+                            <li>Use 2 spaces for indentation (never tabs)</li>
+                            <li>Quote strings with special characters</li>
+                            <li>Use anchors (&) and aliases (*) for reusability</li>
+                            <li>Validate YAML before committing</li>
+                            <li>Use consistent naming conventions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="productivity-section">
+                    <h2>⚙️ VS Code Setup for DevOps</h2>
+                    <div class="tips-list">
+                        <ul>
+                            <li><strong>Extensions:</strong> YAML, Docker, Kubernetes, Terraform</li>
+                            <li><strong>Settings:</strong> Enable format on save</li>
+                            <li><strong>Terminal:</strong> Use integrated terminal with multiple panes</li>
+                            <li><strong>Git:</strong> Use built-in Git integration</li>
+                            <li><strong>Remote:</strong> SSH extension for remote development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suggest Idea Page -->
+    <section id="suggest" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Suggest a DevOps Idea</h1>
+                <p>Share your project ideas with the community</p>
+            </div>
+            <form id="suggest-form" class="suggest-form">
+                <div class="form-group">
+                    <label for="idea-title">Project Title *</label>
+                    <input type="text" id="idea-title" required placeholder="e.g., Automated CI/CD Pipeline">
+                </div>
+                <div class="form-group">
+                    <label for="idea-description">Description *</label>
+                    <textarea id="idea-description" required rows="5" placeholder="Describe your project idea..."></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="idea-difficulty">Difficulty *</label>
+                        <select id="idea-difficulty" required>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="idea-category">Category *</label>
+                        <select id="idea-category" required>
+                            <option value="CI/CD">CI/CD</option>
+                            <option value="Cloud">Cloud</option>
+                            <option value="Containers">Containers</option>
+                            <option value="Monitoring">Monitoring</option>
+                            <option value="IAC">Infrastructure as Code</option>
+                            <option value="Linux">Linux</option>
+                            <option value="GitHub Actions">GitHub Actions</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="idea-tools">Tools (comma-separated)</label>
+                    <input type="text" id="idea-tools" placeholder="e.g., Docker, Kubernetes, Terraform">
+                </div>
+                <button type="submit" class="submit-btn">Submit Idea</button>
+            </form>
+            <div id="success-message" class="success-message hidden">
+                <span class="success-icon">✓</span>
+                <span>Your idea has been submitted successfully!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Page -->
+    <section id="profile" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Your Profile</h1>
+                <p>Manage your saved ideas and contributions</p>
+            </div>
+            <div class="profile-tabs">
+                <button class="tab-btn active" data-tab="saved">Saved Ideas</button>
+                <button class="tab-btn" data-tab="upvoted">Upvoted Ideas</button>
+                <button class="tab-btn" data-tab="submitted">Submitted Ideas</button>
+            </div>
+            <div class="tab-content active" id="saved-tab">
+                <div class="projects-grid" id="saved-projects">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+            <div class="tab-content" id="upvoted-tab">
+                <div class="projects-grid" id="upvoted-projects">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+            <div class="tab-content" id="submitted-tab">
+                <div class="projects-grid" id="submitted-projects">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
